@@ -5,8 +5,9 @@ const jwt = require('jsonwebtoken');
 const app = express();
 
 // Middleware
+const FRONTEND_URL = process.env.CORS_ORIGIN || 'http://localhost:8080';
 app.use(cors({
-    origin: 'http://localhost:8080', // Frontend URL
+    origin: FRONTEND_URL,
     credentials: true
 }));
 app.use(express.json());
